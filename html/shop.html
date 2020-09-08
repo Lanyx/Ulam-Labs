@@ -1,0 +1,2247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.1" />
+<title>shop API documentation</title>
+<meta name="description" content="Recruitment task for Ulam Labs (Wrocław, Poland) prepared by Grzegorz Wochlik
+wochlik.gm@gmail.com
+Dummy program concentrating on design and …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>shop</code></h1>
+</header>
+<section id="section-intro">
+<h1 id="recruitment-task-for-ulam-labs-wrocaw-poland-prepared-by-grzegorz-wochlik">Recruitment task for Ulam Labs (Wrocław, Poland) prepared by Grzegorz Wochlik</h1>
+<pre><code>wochlik.gm@gmail.com
+</code></pre>
+<hr>
+<p>Dummy program concentrating on design and documentation of the API end points.</p>
+<p>I ran into some irony. I was trying to get a professional look to the
+documentation, rather than the cut-and-paste text file output. I looked for some
+tools like 'sphinx' and 'mkdoc'. The irony is that tools to aid with
+documentation were so poorly documented that they were unusable. Also, they
+didn't do their job properly.</p>
+<p>Then, I found a gem named 'pdoc'. (I like the Ruby language, hence the
+reference). This tool is no fuss, no nonsense. The single example gets right to
+the point. The additional parameter ('&ndash;force') was easy to find. It overwrites
+the current HTML file.</p>
+<p>Pass or fail, as ususal, I made a {mountain from a molehill}*; this project was
+an interesting experience. It opened my eyes to an alternative career path as a
+"Software Architect" (I thank You for that). Effectively, my little bit of
+knowledge about everything becomes useful. Additionally, this experience has
+re-affirmed my values: preference to morning work instead of evening,
+constant editing to make sure it is perfect, constant stopping to think 'is
+this correct?', the testing after every paragraph. The grand final, the grand
+discovery: I still can't fit into a time budget.</p>
+<p>As you can clearly see, I also have a passion for writing. Well, here I am
+{opening a can of worms}*. Anyway, I'll need to move onto technical matters.</p>
+<p>{}* = Idiom in english</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python"># pdoc --html --force shop.py
+
+&#34;&#34;&#34; # Recruitment task for Ulam Labs (Wrocław, Poland) prepared by Grzegorz Wochlik
+    wochlik.gm@gmail.com
+-----
+Dummy program concentrating on design and documentation of the API end points.
+
+I ran into some irony. I was trying to get a professional look to the
+documentation, rather than the cut-and-paste text file output. I looked for some
+tools like &#39;sphinx&#39; and &#39;mkdoc&#39;. The irony is that tools to aid with
+documentation were so poorly documented that they were unusable. Also, they
+didn&#39;t do their job properly.
+
+Then, I found a gem named &#39;pdoc&#39;. (I like the Ruby language, hence the
+reference). This tool is no fuss, no nonsense. The single example gets right to
+the point. The additional parameter (&#39;--force&#39;) was easy to find. It overwrites
+the current HTML file.
+
+Pass or fail, as ususal, I made a {mountain from a molehill}*; this project was
+an interesting experience. It opened my eyes to an alternative career path as a
+&#34;Software Architect&#34; (I thank You for that). Effectively, my little bit of
+knowledge about everything becomes useful. Additionally, this experience has
+re-affirmed my values: preference to morning work instead of evening,
+constant editing to make sure it is perfect, constant stopping to think &#39;is
+this correct?&#39;, the testing after every paragraph. The grand final, the grand
+discovery: I still can&#39;t fit into a time budget.
+
+As you can clearly see, I also have a passion for writing. Well, here I am
+{opening a can of worms}*. Anyway, I&#39;ll need to move onto technical matters.
+
+{}* = Idiom in english
+&#34;&#34;&#34;
+
+#-------------------------------------------------------------------------------
+def list_products(dBriefcase):
+    &#34;&#34;&#34;Returns information about items available for purchase in the shop.
+
+    Method looks through the database based on the search and indexing
+    parameters provided. A structure is then returned. Note that error handling
+    is incoperated into the response.
+
+    Parameters
+    ----------
+        dBriefcase (dictionary)
+        This is an all-in-one container for transporting variables into the
+        method. The keys required are listed below:
+
+            dBriefcase[&#34;iIdx&#34;] (integer)
+                Index to the paginated data. It is used to break up a long
+                list into smaller pieces. For example, if there are 314 items
+                for a particular keyword, the caller may want to fetch in
+                batches of 5. &#39;iIdx&#39; will be set to 0 for the first batch and
+                to 4 for the second, and so on.
+
+            dBriefcase[&#34;iMax_res&#34;] (integer)
+                Maximum number of results in this output.
+
+            dBriefcase[&#34;sItem_filter&#34;] (string, none)
+                (string) datatype:
+                    Keyword for searching the &#39;description&#39; fields of products
+                (none) datatype:
+                    Show all products.
+
+    Returns - Valid data
+    -------
+    A dictionary is returned containing key-value pairs. However, the structure
+    for valid data is different from error notification. The &#39;sStatus&#39; key is
+    common to both &#39;valid data&#39; and &#39;error&#39; returns. It determines the further
+    structure of the response
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;OK&#34;
+            The string &#34;OK&#34; is returned under the &#34;sStatus&#34; key, to indicate
+            that non-error data is available.
+
+        dOutput[&#34;iIdx_n&#34;] (integer)
+            Actual index, within the specified search, to the last item
+            returned. If incremented, it can be used as the &#39;dBriefcase[&#34;idx&#34;]&#39;
+            input in the next search to retrieve the next batch of items.
+
+        dOutput[&#34;iSearch_tot&#34;] (integer)
+            Total number of items in the search
+
+        dOutput[&#34;aItems&#34;] (list of dictionaries)
+            Information about items requested. Each item in the list has the
+            following structure. The &#39;n&#39; (integer) in the structure indexes the
+            item number on the list
+
+            dOutput[&#34;aItems&#34;][n][&#34;sItem_id&#34;] (string)
+                Unique item identifier as a string. May be a sequential
+                alpha-numeric code.
+
+            dOutput[&#34;aItems&#34;][n][&#34;sBrand&#34;] (string)
+                Manufacturer name.
+
+            dOutput[&#34;aItems&#34;][n][&#34;sDesc&#34;] (string)
+                Searchable item description
+
+            dOutput[&#34;aItems&#34;][n][&#34;sSize&#34;] (string)
+                If items are available in varous sizes (for example clothing,
+                TV&#39;s) then a string is specifed.
+                If the item is a &#39;one-size-fits-all&#39;, then the string &#39;N/A&#39;
+                is used (&#39;Not applicable&#39;)
+
+                So, &#34;blue jeans size 38&#34; will have a seperate entry to &#34;blue
+                jeans size 36&#34;. Also &#34;black jeans size 38&#34; will also be
+                seperate.
+
+            dOutput[&#34;aItems&#34;][n][&#34;sColour&#34;] (string)
+                Main colour or pattern of the item.
+
+                So, &#34;blue jeans size 38&#34; will have a seperate entry to &#34;black
+                jeans size 38&#34;. Also &#34;blue jeans size 38&#34; will also be
+                seperate.
+
+            dOutput[&#34;aItems&#34;][n][&#34;fPrice&#34;] (float)
+                Price of the item in the &#34;sCurrency&#34; (see below) units.
+
+            dOutput[&#34;aItems&#34;][n][&#34;sCurrency&#34;] (string)
+                ISO-4217 currency code, in which the item is priced. For
+                example, the Polish Zloty has the code &#34;PLN&#34;. The string &#34;PLN&#34;
+                would be entered in this field
+
+            dOutput[&#34;aItems&#34;][n][&#34;iStock&#34;] (integer)
+                How many items are currently available for purchase.
+
+            dOutput[&#34;aItems&#34;][n][&#34;aPhotos&#34;] (list of strings)
+                Links to photos of the item
+
+    Returns -- Error output
+    -------
+    A dictionary is returned containing key-value pairs. However, the structure
+    for valid data is different from error notification.
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;ERROR&#34;
+            The string &#34;ERROR&#34; is returned under the &#34;sStatus&#34; key, to indicate
+            that error information is available.
+
+        dOutput[&#34;sErr_desc&#34;] (string)
+            Brief description of the error.
+
+            &#34;data validation&#34;: Incorrectly formatted input
+
+            &#34;item not found&#34;: Search yielded 0 results
+
+            &#34;connection error&#34;: Unable to reach the database
+
+            &#34;internal error&#34;: reserved for an error which could not be
+                predicted at the design stage.
+
+    Raises (exceptions)
+    ------
+    To be determined
+
+    Example of correct use
+    ------
+    The dictionaries are written across multiple lines to highlight their
+    structure.
+
+    &gt;&gt;&gt; dBriefcase = {
+        &#34;iIdx&#34;: 0,
+        &#34;iMax_res&#34;: 5,
+        &#34;sItem_filter&#34;: None
+    }
+    &gt;&gt;&gt; dOutput = list_products(dBriefcase)
+    &gt;&gt;&gt; print(dOutput)
+    {
+        &#34;sStatus&#34;:&#34;OK&#34;,
+        &#34;iIdx_n&#34;:1,
+        &#34;iSearch_tot&#34;:2,
+        &#34;aItems&#34;:[
+            {
+                &#34;sItem_id&#34;:&#34;I-00001&#34;,
+                &#34;sBrand&#34;:&#34;Vaenesston Zoo&#34;,
+                &#34;sDesc&#34;:&#34;Female unicorn&#34;,
+                &#34;sSize&#34;:&#34;Medium horse (16hh)&#34;,
+                &#34;sColour&#34;:&#34;White&#34;,
+                &#34;fPrice&#34;:25000000.00,
+                &#34;sCurrency&#34;:&#34;USD&#34;,
+                &#34;iStock&#34;:1,
+                &#34;dPhotos&#34;:[
+                    &#34;https://i.pinimg.com/564x/0c/6d/34/0c6d34398d9a464f6aafb6f8d32dee38.jpg&#34;
+                ]
+            },
+            {
+                &#34;sItem_id&#34;:&#34;I-00002&#34;,
+                &#34;sBrand&#34;:&#34;Handmade Flags&#34;,
+                &#34;sDesc&#34;:&#34;Flag of Quidthovice&#34;,
+                &#34;sSize&#34;:&#34;150cm x 100cm&#34;,
+                &#34;sColour&#34;:&#34;State colours&#34;,
+                &#34;fPrice&#34;:14.99,
+                &#34;sCurrency&#34;:&#34;PLN&#34;,
+                &#34;iStock&#34;:100,
+                &#34;dPhotos&#34;:[
+                    &#34;https://i.pinimg.com/originals/b4/5a/4c/b45a4c2bc6a626a269548e461ee84301.jpg&#34;
+                ]
+            }
+        ]
+    }
+
+    Example of error response
+    ------
+    The dictionaries are written across multiple lines to highlight their
+    structure.
+
+    &gt;&gt;&gt; dBriefcase = {
+        &#34;iIdx&#34;: 0,
+        &#34;iMax_res&#34;: 5,
+        &#34;sItem_filter&#34;: Male unicorn
+    }
+    &gt;&gt;&gt; dOutput = list_products(dBriefcase)
+    &gt;&gt;&gt; print(dOutput)
+    {
+        &#34;sStatus&#34;:&#34;ERROR&#34;,
+        &#34;sErr_desc&#34;:&#34;item not found&#34;
+    }
+    &#34;&#34;&#34;
+
+    pass
+    # TODO: Add code here.
+#-------------------------------------------------------------------------------
+def create_order(sAuth_token):
+    &#34;&#34;&#34;Indicates the intention for the customer to make purchaces.
+
+    Method validates the authentication token (to make sure that is hasn&#39;t
+    expired). Internally, a &#39;basket&#39; is opened under this authentication code.
+
+    Architect&#39;s Note:\n
+    I would place the customer authentication at this step. The customer would
+    be free to browse the shop without any authentication. However, when it
+    comes to a financial transaction, we need authentication. Since I don&#39;t
+    understand the difference between &#39;create order&#39; and &#39;update order&#39;, I made
+    a few assumptions.
+    Anyway, In my revised model, I would take in (in the briefcase): the user
+    name, the salt of their password. Two level authentication can be done at
+    the checkout stage (confirmation via SMS or another channel)
+
+    Parameters
+    ----------
+        sAuth_token (string)
+        Expiring cryptographic token generated during authentication.
+            # Architect&#39;s Note:
+            # Since the token expires within about 30 minutes, then I believe
+            # that AES or triple-DES encryption should be sufficient. The token
+            # can be encoded in base-62 (0..9,A..Z,a..z). Going RSA I think
+            # would be overkill. However, the RSA option could be open as a
+            # future security upgrade. If the traffic is lighter, then a simple
+            # random number could be implemented.
+
+    Returns - Valid data:
+    --------
+    A dictionary is returned containing key-value pairs. However, the structure
+    for valid data is different from error notification. The &#39;sStatus&#39; key is
+    common to both &#39;valid data&#39; and &#39;error&#39; returns. It determines the further
+    structure of the response
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;OK&#34;
+            A string &#34;OK&#34; is returned as the value to the key &#34;OK&#34;. This is a
+            flag to indicate that the request was successful.
+
+        dOutput[&#34;sBasket_code&#34;] (string)
+            Cryptographic identifier to which &#34;basket&#34; to use.
+            # Architect&#39;s Note:
+            # Internally, the &#39;basket&#39; will have the authentication code
+            # attached to it. At check-out, the authentication will be checked
+            # again.
+
+    Returns - Error output:
+    -------
+    A dictionary is returned, which has one common key with the &#39;Valid data&#39;
+    return option.
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;ERROR&#34;
+            The string &#34;ERROR&#34; is populated to flag the condition.
+
+        dOutput[&#34;sErr_desc&#34;] (string)
+            Brief description of error
+
+            &#34;unable to validate token&#34;: technical issue with validation process.
+
+            &#34;token expired&#34;: timestamp inside the token is now in the past.
+
+            &#34;invalid token&#34;: token returned does not match internal token.
+
+    Raises (exceptions)
+    ------
+    To be determined
+
+    Example of correct use
+    ------
+    &gt;&gt;&gt; dOutput = create_order(&#34;8zQ74sSawCfWza05&#34;)
+    &gt;&gt;&gt; print(dOutput)
+    {&#34;sStatus&#34;:&#34;OK&#34;, &#34;sBasket_code&#34;:&#34;sA13Qeqx&#34;}
+
+    Example of error response
+    ------
+    &gt;&gt;&gt; dOutput = create_order(&#34;3zQ74sSawCfWza05&#34;)
+    &gt;&gt;&gt; print(dOutput)
+    {&#34;sStatus&#34;:&#34;Error&#34;, &#34;sErr_desc&#34;:&#34;invalid token&#34;}
+
+    &#34;&#34;&#34;
+    pass
+    # TODO: Add code here.
+#-------------------------------------------------------------------------------
+def update_order(dBriefcase):
+    &#34;&#34;&#34; Requests the selected item to be reserved for purchasing.
+
+    Parameters:
+    ----------
+        dBriefcase (dictionary)
+        This is a container transporting other parameters. It contains the
+        following keys:
+
+            dBriefcase[&#34;sBasket_code&#34;] (string)
+                One-time cryptographic token used to identify the correct
+                &#39;basket&#39;.
+
+            dBriefcase[&#34;sItem_id&#34;] (string)
+                Identification code for the product being purchased.
+
+            dBriefcase[&#34;iQty&#34;] (integer)
+                Number of items purchased.
+
+    Returns - Valid data
+    -------
+    A dictionary is returned containing key-value pairs. However, the structure
+    for valid data is different from error notification. The &#39;sStatus&#39; key is
+    common to both &#39;valid data&#39; and &#39;error&#39; returns. It determines the further
+    structure of the response
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;OK&#34;
+            The string &#34;OK&#34; is returned under the &#34;sStatus&#34; key, to indicate
+            that non-error data is available.
+
+    Returns - Error output:
+    -------
+    A dictionary is returned, which has one common key with the &#39;Valid data&#39;
+    return option.
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;ERROR&#34;
+            The string &#34;ERROR&#34; is populated to flag the condition.
+
+        dOutput[&#34;sErr_desc&#34;] (string)
+            Brief description of error
+
+            &#34;data validation&#34;: Syntax error in the input
+
+            &#34;item sold out&#34;: No stock is available at this time.
+
+            &#34;partial order&#34;: Customer ordered more than stock available.
+                &#39;Business rules&#39; will deterimine how to handle this situation
+
+            &#34;not available&#34;: Business rules say that this item can&#39;t be sold to
+                this customer. For example, a pneumatic pistol (pellet gun) may
+                only be legally available in certain regions.
+
+            &#34;invalid currency&#34;: Business rules may say that a Polish customer
+                is not allowed to purchase items quoted in, lets say &#34;USD&#34;.
+
+            &#34;maximum quantity exceeded&#34;: Some items have limits on how much one
+                customer may purchase. Going over that limit will trigger this
+                response
+
+            &#34;item does not exist&#34;: dBriefcase[&#39;sItem_id&#39;] does not exist.
+
+            &#34;invalid basket&#34;: token returned does not match internal token.
+
+            &#34;basket expired&#34;: Time limit has been exceeded in doing the shopping
+
+    Raises (exceptions)
+    ------
+    To be determined
+
+    Example of correct use
+    ------
+    The dictionaries are written across multiple lines to highlight their
+    structure.
+
+    &gt;&gt;&gt; dBriefcase = {
+        &#34;sBasket_code&#34;: &#34;sA13Qeqx&#34;,
+        &#34;sItem_id&#34;: &#34;I-00002&#34;,         # Flag
+        &#34;iQty&#34;: 3
+    }
+    &gt;&gt;&gt; dOutput = update_order(dBriefcase)
+    &gt;&gt;&gt; print(dOutput)
+    {&#34;sStatus&#34;:&#34;OK&#34;}
+
+    Example of error response.
+    ------
+    &gt;&gt;&gt; dBriefcase = {
+        &#34;sBasket_code&#34;: &#34;sA13Qeqx&#34;,
+        &#34;sItem_id&#34;: &#34;I-00001&#34;,         # Unicorn
+        &#34;iQty&#34;: 1
+    }
+    &gt;&gt;&gt; dOutput = update_order(dBriefcase)
+    &gt;&gt;&gt; print(dOutput)
+    {&#34;sStatus&#34;:&#34;ERROR&#34;, &#34;sErr_desc&#34;:&#34;invalid currency&#34;}
+    &#34;&#34;&#34;
+    pass
+    # TODO: Add code here.
+#-------------------------------------------------------------------------------
+def delete_order(dBriefcase):
+    &#34;&#34;&#34;Requests a return of item from customer&#39;s basket prior to payment.
+
+    Run &#39;list_orders&#39; prior to this command. This will give the most up-to-date
+    list of items.
+
+    Parameters
+    ---------
+        dBriefcase (dictionary)
+        This is an all-in-one container for transporting variables into the
+        method. The keys required are listed below:
+
+            dBriefcase[&#34;sBasket_code&#34;] (string)
+                Identifies from which basket we need to remove the items.
+
+            dBriefcase[&#34;sItem_id&#34;] (string)
+                Identifier code for the item being removed
+
+            dBriefcase[&#34;iQty&#34;] (integer)
+                Number of items to be removed. This allows to reduce the number
+                of items in the basket, say from 3 to 2, by specifying &#39;1&#39;.
+                Integers can&#39;t be negative or zero.
+
+    Returns - Valid data:
+    --------
+    A dictionary is returned containing key-value pairs. However, the structure
+    for valid data is different from error notification. The &#39;sStatus&#39; key is
+    common to both &#39;valid data&#39; and &#39;error&#39; returns. It determines the further
+    structure of the response
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;OK&#34;
+            A string &#34;OK&#34; is returned as the value to the key &#34;OK&#34;. This is a
+            flag to indicate that the request was successful.
+
+    Returns - Error output:
+    -------
+    A dictionary is returned, which has one common key with the &#39;Valid data&#39;
+    return option.
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;ERROR&#34;
+            The string &#34;ERROR&#34; is populated to flag the condition.
+
+        dOutput[&#34;sErr_desc&#34;] (string)
+            Brief description of error
+
+            &#34;quantity too low&#34;: Attempt to remove 0 or a negative amount of
+                items. Use &#34;update order&#34; to add additional units to an item.
+
+            &#34;quantity too high&#34;: Attempt to return too much. Triggered in this
+                example, where the basket has 4 items, and we are trying to
+                delete 5.
+
+            &#34;invalid basket&#34;: token returned does not match internal token.
+
+            &#34;basket expired&#34;: Time limit has been exceeded in doing the shopping
+
+            &#34;invalid item code&#34;: Trying to return a product which is not in the
+                customer&#39;s basket.
+
+    Raises (exceptions)
+    ------
+    To be determined
+
+    Example of correct use
+    ------
+    The dictionaries are written across multiple lines to highlight their
+    structure.
+
+    &gt;&gt;&gt; dBriefcase = {
+        &#34;sBasket_code&#34;: &#34;sA13Qeqx&#34;,
+        &#34;sItem_id&#34;: &#34;I-00002&#34;,         # Flag
+        &#34;iQty&#34;: 1                      # 3 -&gt; 2 in the basket
+    }
+    &gt;&gt;&gt; dOutput = update_order(dBriefcase)
+    &gt;&gt;&gt; print(dOutput)
+    {&#34;sStatus&#34;:&#34;OK&#34;}
+
+    Example of error response
+    ------
+    The dictionaries are written across multiple lines to highlight their
+    structure.
+
+    &gt;&gt;&gt; dBriefcase = {
+        &#34;sBasket_code&#34;: &#34;sA13Qeqx&#34;,
+        &#34;sItem_id&#34;: &#34;I-00001&#34;,         # Unicorn
+        &#34;iQty&#34;: 1
+    }
+    &gt;&gt;&gt; dOutput = update_order(dBriefcase)
+    &gt;&gt;&gt; print(dOutput)
+    {&#34;sStatus&#34;:&#34;ERROR&#34;, &#34;sErr_desc&#34;:&#34;invalid item code&#34;}
+    &#34;&#34;&#34;
+
+    pass
+    # TODO: Add code here.
+
+#-------------------------------------------------------------------------------
+def checkout_order(dBriefcase):
+    &#34;&#34;&#34;Finalizes the shopping experience.
+
+    The basket is &#39;sealed&#39; and no more changes are allowed after this command.
+    Destroys the &#39;sBasket_code&#39;, but creates a human-readable invoice code.
+
+    Parameters:
+    ----------
+        dBriefcase (dictionary)
+        This is a container transporting other parameters. It contains the
+        following keys:
+
+            dBriefcase[&#34;sBasket_code&#34;] (string)
+                One-time cryptographic token used to identify the correct
+                &#39;basket&#39;.
+
+            dBriefcase[&#34;sAuth_token&#34;] (string)
+                Re-identification of the customer. It is done to have redundancy
+                in the security system.
+
+    Returns - Valid data:
+    --------
+    A dictionary is returned containing key-value pairs. However, the structure
+    for valid data is different from error notification. The &#39;sStatus&#39; key is
+    common to both &#39;valid data&#39; and &#39;error&#39; returns. It determines the further
+    structure of the response
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;OK&#34;
+            A string &#34;OK&#34; is returned as the value to the key &#34;OK&#34;. This is a
+            flag to indicate that the request was successful.
+
+        dOutput[&#34;sInv_Currency&#34;] (string)
+            ISO-4217 code (&#34;PLN&#34;, &#34;USD&#34;, &#34;XBT&#34;, ect) of the invoice. This is
+            the currency of the invoice. All financial amounts use these units.
+
+        dOutput[&#34;fShip_cost&#34;] (float)
+            Amount charged for delivery of goods.
+
+        dOutput[&#34;fGoods_cost&#34;] (float)
+            Total money charged for items purchased on the site.
+
+        dOutput[&#34;sInvoice_code&#34;] (string)
+            Invoice reference number. This will be needed by the customer to
+            validate collection.
+
+    Returns - Error output:
+    -------
+    A dictionary is returned, which has one common key with the &#39;Valid data&#39;
+    return option.
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;ERROR&#34;
+            The string &#34;ERROR&#34; is populated to flag the condition.
+
+        dOutput[&#34;sErr_desc&#34;] (string)
+            Brief description of error
+
+            &#34;unable to validate auth token&#34;: technical issue with validation.
+                Transaction still open. Additional expiry time will be given.
+
+            &#34;auth token expired&#34;: The authentication token has expired, even
+                taking the amount of time to do shopping into account. This
+                indicates that the &#39;sBasket_code&#39; token has also expired. Hence
+                the transaction is completely rejected.
+
+            &#34;invalid auth token&#34;: token returned does not match internal token.
+                Transaction is completely rejected.
+
+            &#34;unable to validate basket token&#34;: technical issue with validation.
+                Transaction still open. Additional expiry time will be given.
+
+            &#34;basket token expired&#34;: The basket token has expired. Customers
+                have a certain amount of time to complete their shopping. This
+                time is determined by Business rules. Hence the transaction is
+                completely rejected.
+
+            &#34;invalid basket token&#34;: token returned does not match internal data.
+                Transaction is completely rejected.
+
+            &#34;unable to generate invoice&#34;: Technical problems with the financial
+                side of the site. Additional expiry time will be given.
+
+            &#34;payment rejected&#34;: Customer was unable to settle the invoice. The
+                transaction is completely rejected.
+
+    Example of correct use
+    ------
+    The dictionaries are written across multiple lines to highlight their
+    structure.
+
+    &gt;&gt;&gt; dBriefcase = {
+        &#34;sBasket_code&#34;: &#34;sA13Qeqx&#34;,
+        &#34;sAuth_token&#34;: &#34;8zQ74sSawCfWza05&#34;,
+        }
+    &gt;&gt;&gt; dOutput = checkout_order(dBriefcase)
+    &gt;&gt;&gt; print(dOutput)
+    {
+        &#34;sStatus&#34;:&#34;OK&#34;,
+        &#34;sInv_Currency&#34;:&#34;PLN&#34;,
+        &#34;fShip_cost&#34;:40.00,
+        &#34;fGoods_cost&#34;:29.98,
+        &#34;sInvoice_code&#34;:&#34;Z-000012&#34;
+    }
+
+    Example of error response.
+    ------
+    The dictionaries are written across multiple lines to highlight their
+    structure.
+
+    &gt;&gt;&gt; dBriefcase = {
+        &#34;sBasket_code&#34;: &#34;5A13Qeqx&#34;,
+        &#34;sAuth_token&#34;: &#34;8zQ74sSawCfWza05&#34;,
+        }
+    &gt;&gt;&gt; dOutput = checkout_order(dBriefcase)
+    &gt;&gt;&gt; print(dOutput)
+    {&#34;sStatus&#34;:&#34;ERROR&#34;, &#34;sErr_desc&#34;:&#34;invalid basket token&#34;}
+
+    &#34;&#34;&#34;
+    pass
+
+#-------------------------------------------------------------------------------
+def list_orders(sBasket_code):
+    &#34;&#34;&#34;Gives customer access to the items in their &#39;basket&#39;.
+
+    Returns a structure which includes all the items which the customer intends
+    to purchase. This is the net result of &#39;update_order&#39; and &#39;delete_order&#39;
+
+    Parameters
+    -------
+    sBasket_code (string)
+
+        Single-use cryptographic code which joins items purchased with the
+        purchaser
+
+            # Architect&#39;s Note: I try not to repeat definitions which were used
+            # in a previous field. From experience, it is always helpful to have
+            # multiple definitions of a certain item. Also, not every person&#39;s
+            # English is good. Alternative descriptions will assist in a better
+            # understanding of the concept.
+
+    Returns - Valid data:
+    -------
+    A dictionary is returned containing key-value pairs. However, the structure
+    for valid data is different from error notification. The &#39;sStatus&#39; key is
+    common to both &#39;valid data&#39; and &#39;error&#39; returns. It determines the further
+    structure of the response\n
+    Architect&#39;s Note: I have deliberately avoided adding up the totals, adding
+    delivery, ect. Psychologically, the client would see the &#39;high&#39; bill and
+    stop shopping. Hence, the surprises and the tax breakdown will be only
+    revealed at the final invoice.
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;OK&#34;
+            The string &#34;OK&#34; is returned under the &#34;sStatus&#34; key, to indicate
+            that non-error data is available.
+
+        dOutput[&#34;aItems&#34;] (list of dictionaries)
+            Lists items reserved for purchace. Each item in the list has the
+            following structure. The &#39;n&#39; (integer) in the structure indexes the
+            item number on the list
+
+            dOutput[&#34;aItems&#34;][n][&#34;sItem_id&#34;] (string)
+                Identifier of the item purchased.
+
+            dOutput[&#34;aItems&#34;][n][&#34;iQty&#34;] (integer)
+                How many items are on order
+
+            dOutput[&#34;aItems&#34;][n][&#34;sDesc&#34;] (string)
+                Description of the item
+
+            dOutput[&#34;aItems&#34;][n][&#34;sSize&#34;] (string)
+                If the item (like clothing or shoes) comes in various sizes, it
+                is specified here.
+
+            dOutput[&#34;aItems&#34;][n][&#34;sColour&#34;] (string)
+                Main colour or pattern of the item.
+
+            dOutput[&#34;aItems&#34;][n][&#34;sItem_currency&#34;] (string)
+                ISO-4217 currency code for the items purchased. Usually it is
+                the currency of the customer&#39;s region.
+
+            dOutput[&#34;aItems&#34;][n][&#34;fUnit_price&#34;] (float)
+                Price of the single item in the &#34;sCurrency&#34;
+
+            dOutput[&#34;aItems&#34;][n][&#34;fTotal_price&#34;] (float)
+                Price for all the copies of the item.
+
+    Returns - Error output:
+    -------
+    A dictionary is returned, which has one common key with the &#39;Valid data&#39;
+    return option.
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;ERROR&#34;
+            The string &#34;ERROR&#34; is populated to flag the condition.
+
+        dOutput[&#34;sErr_desc&#34;] (string)
+            Brief description of error
+
+            &#34;unable to validate token&#34;: technical issue with validation process.
+
+            &#34;token expired&#34;: timestamp inside the token is now in the past.
+
+            &#34;invalid token&#34;: token returned does not match internal token.
+
+    Raises (exceptions)
+    ------
+    To be determined
+
+    Example of correct use
+    ------
+    The dictionaries are written across multiple lines to highlight their
+    structure.
+
+    &gt;&gt;&gt; dOutput = list_orders(&#34;sA13Qeqx&#34;)
+    &gt;&gt;&gt; print(dOutput)
+    {
+        &#34;sStatus&#34;:&#34;OK&#34;,
+        &#34;aItems&#34;:[
+            {
+                &#34;sItem_id&#34;:&#34;I-00002&#34;,
+                &#34;iQty&#34;:3,
+                &#34;sDesc&#34;:&#34;Flag of Quidthovice&#34;,
+                &#34;sSize&#34;:150cm x 100cm&#34;,
+                &#34;sColour&#34;:&#34;State colours&#34;,
+                &#34;sItem_currency&#34;:&#34;PLN&#34;,
+                &#34;fUnit_price&#34;:&#34;14.99&#34;,
+                &#34;fTotal_price&#34;:&#34;44.97&#34;
+            },
+            {
+                ...
+            }
+        ]
+    }
+
+    Example of error response
+    -------
+    &gt;&gt;&gt; dOutput = list_orders(&#34;5A13Qeqx&#34;)
+    &gt;&gt;&gt; print(dOutput)
+    {&#34;sStatus&#34;:&#34;Error&#34;, &#34;sErr_desc&#34;:&#34;invalid token&#34;}
+
+    &#34;&#34;&#34;
+    pass
+    # TODO: Add code here.
+#-------------------------------------------------------------------------------
+print(&#34;This is a dummy program concentrating on the input / output of each &#34; +
+&#34;function.&#34;)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="shop.checkout_order"><code class="name flex">
+<span>def <span class="ident">checkout_order</span></span>(<span>dBriefcase)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Finalizes the shopping experience.</p>
+<p>The basket is 'sealed' and no more changes are allowed after this command.
+Destroys the 'sBasket_code', but creates a human-readable invoice code.</p>
+<h2 id="parameters">Parameters:</h2>
+<pre><code>dBriefcase (dictionary)
+This is a container transporting other parameters. It contains the
+following keys:
+
+    dBriefcase["sBasket_code"] (string)
+        One-time cryptographic token used to identify the correct
+        'basket'.
+
+    dBriefcase["sAuth_token"] (string)
+        Re-identification of the customer. It is done to have redundancy
+        in the security system.
+</code></pre>
+<h2 id="returns-valid-data">Returns - Valid data:</h2>
+<p>A dictionary is returned containing key-value pairs. However, the structure
+for valid data is different from error notification. The 'sStatus' key is
+common to both 'valid data' and 'error' returns. It determines the further
+structure of the response</p>
+<p>dOutput (dictionary)</p>
+<pre><code>dOutput["sStatus"] = "OK"
+    A string "OK" is returned as the value to the key "OK". This is a
+    flag to indicate that the request was successful.
+
+dOutput["sInv_Currency"] (string)
+    ISO-4217 code ("PLN", "USD", "XBT", ect) of the invoice. This is
+    the currency of the invoice. All financial amounts use these units.
+
+dOutput["fShip_cost"] (float)
+    Amount charged for delivery of goods.
+
+dOutput["fGoods_cost"] (float)
+    Total money charged for items purchased on the site.
+
+dOutput["sInvoice_code"] (string)
+    Invoice reference number. This will be needed by the customer to
+    validate collection.
+</code></pre>
+<h2 id="returns-error-output">Returns - Error output:</h2>
+<p>A dictionary is returned, which has one common key with the 'Valid data'
+return option.</p>
+<p>dOutput (dictionary)</p>
+<pre><code>dOutput["sStatus"] = "ERROR"
+    The string "ERROR" is populated to flag the condition.
+
+dOutput["sErr_desc"] (string)
+    Brief description of error
+
+    "unable to validate auth token": technical issue with validation.
+        Transaction still open. Additional expiry time will be given.
+
+    "auth token expired": The authentication token has expired, even
+        taking the amount of time to do shopping into account. This
+        indicates that the 'sBasket_code' token has also expired. Hence
+        the transaction is completely rejected.
+
+    "invalid auth token": token returned does not match internal token.
+        Transaction is completely rejected.
+
+    "unable to validate basket token": technical issue with validation.
+        Transaction still open. Additional expiry time will be given.
+
+    "basket token expired": The basket token has expired. Customers
+        have a certain amount of time to complete their shopping. This
+        time is determined by Business rules. Hence the transaction is
+        completely rejected.
+
+    "invalid basket token": token returned does not match internal data.
+        Transaction is completely rejected.
+
+    "unable to generate invoice": Technical problems with the financial
+        side of the site. Additional expiry time will be given.
+
+    "payment rejected": Customer was unable to settle the invoice. The
+        transaction is completely rejected.
+</code></pre>
+<h2 id="example-of-correct-use">Example Of Correct Use</h2>
+<p>The dictionaries are written across multiple lines to highlight their
+structure.</p>
+<pre><code class="python-repl">&gt;&gt;&gt; dBriefcase = {
+    &quot;sBasket_code&quot;: &quot;sA13Qeqx&quot;,
+    &quot;sAuth_token&quot;: &quot;8zQ74sSawCfWza05&quot;,
+    }
+&gt;&gt;&gt; dOutput = checkout_order(dBriefcase)
+&gt;&gt;&gt; print(dOutput)
+{
+    &quot;sStatus&quot;:&quot;OK&quot;,
+    &quot;sInv_Currency&quot;:&quot;PLN&quot;,
+    &quot;fShip_cost&quot;:40.00,
+    &quot;fGoods_cost&quot;:29.98,
+    &quot;sInvoice_code&quot;:&quot;Z-000012&quot;
+}
+</code></pre>
+<h2 id="example-of-error-response">Example of error response.</h2>
+<p>The dictionaries are written across multiple lines to highlight their
+structure.</p>
+<pre><code class="python-repl">&gt;&gt;&gt; dBriefcase = {
+    &quot;sBasket_code&quot;: &quot;5A13Qeqx&quot;,
+    &quot;sAuth_token&quot;: &quot;8zQ74sSawCfWza05&quot;,
+    }
+&gt;&gt;&gt; dOutput = checkout_order(dBriefcase)
+&gt;&gt;&gt; print(dOutput)
+{&quot;sStatus&quot;:&quot;ERROR&quot;, &quot;sErr_desc&quot;:&quot;invalid basket token&quot;}
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def checkout_order(dBriefcase):
+    &#34;&#34;&#34;Finalizes the shopping experience.
+
+    The basket is &#39;sealed&#39; and no more changes are allowed after this command.
+    Destroys the &#39;sBasket_code&#39;, but creates a human-readable invoice code.
+
+    Parameters:
+    ----------
+        dBriefcase (dictionary)
+        This is a container transporting other parameters. It contains the
+        following keys:
+
+            dBriefcase[&#34;sBasket_code&#34;] (string)
+                One-time cryptographic token used to identify the correct
+                &#39;basket&#39;.
+
+            dBriefcase[&#34;sAuth_token&#34;] (string)
+                Re-identification of the customer. It is done to have redundancy
+                in the security system.
+
+    Returns - Valid data:
+    --------
+    A dictionary is returned containing key-value pairs. However, the structure
+    for valid data is different from error notification. The &#39;sStatus&#39; key is
+    common to both &#39;valid data&#39; and &#39;error&#39; returns. It determines the further
+    structure of the response
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;OK&#34;
+            A string &#34;OK&#34; is returned as the value to the key &#34;OK&#34;. This is a
+            flag to indicate that the request was successful.
+
+        dOutput[&#34;sInv_Currency&#34;] (string)
+            ISO-4217 code (&#34;PLN&#34;, &#34;USD&#34;, &#34;XBT&#34;, ect) of the invoice. This is
+            the currency of the invoice. All financial amounts use these units.
+
+        dOutput[&#34;fShip_cost&#34;] (float)
+            Amount charged for delivery of goods.
+
+        dOutput[&#34;fGoods_cost&#34;] (float)
+            Total money charged for items purchased on the site.
+
+        dOutput[&#34;sInvoice_code&#34;] (string)
+            Invoice reference number. This will be needed by the customer to
+            validate collection.
+
+    Returns - Error output:
+    -------
+    A dictionary is returned, which has one common key with the &#39;Valid data&#39;
+    return option.
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;ERROR&#34;
+            The string &#34;ERROR&#34; is populated to flag the condition.
+
+        dOutput[&#34;sErr_desc&#34;] (string)
+            Brief description of error
+
+            &#34;unable to validate auth token&#34;: technical issue with validation.
+                Transaction still open. Additional expiry time will be given.
+
+            &#34;auth token expired&#34;: The authentication token has expired, even
+                taking the amount of time to do shopping into account. This
+                indicates that the &#39;sBasket_code&#39; token has also expired. Hence
+                the transaction is completely rejected.
+
+            &#34;invalid auth token&#34;: token returned does not match internal token.
+                Transaction is completely rejected.
+
+            &#34;unable to validate basket token&#34;: technical issue with validation.
+                Transaction still open. Additional expiry time will be given.
+
+            &#34;basket token expired&#34;: The basket token has expired. Customers
+                have a certain amount of time to complete their shopping. This
+                time is determined by Business rules. Hence the transaction is
+                completely rejected.
+
+            &#34;invalid basket token&#34;: token returned does not match internal data.
+                Transaction is completely rejected.
+
+            &#34;unable to generate invoice&#34;: Technical problems with the financial
+                side of the site. Additional expiry time will be given.
+
+            &#34;payment rejected&#34;: Customer was unable to settle the invoice. The
+                transaction is completely rejected.
+
+    Example of correct use
+    ------
+    The dictionaries are written across multiple lines to highlight their
+    structure.
+
+    &gt;&gt;&gt; dBriefcase = {
+        &#34;sBasket_code&#34;: &#34;sA13Qeqx&#34;,
+        &#34;sAuth_token&#34;: &#34;8zQ74sSawCfWza05&#34;,
+        }
+    &gt;&gt;&gt; dOutput = checkout_order(dBriefcase)
+    &gt;&gt;&gt; print(dOutput)
+    {
+        &#34;sStatus&#34;:&#34;OK&#34;,
+        &#34;sInv_Currency&#34;:&#34;PLN&#34;,
+        &#34;fShip_cost&#34;:40.00,
+        &#34;fGoods_cost&#34;:29.98,
+        &#34;sInvoice_code&#34;:&#34;Z-000012&#34;
+    }
+
+    Example of error response.
+    ------
+    The dictionaries are written across multiple lines to highlight their
+    structure.
+
+    &gt;&gt;&gt; dBriefcase = {
+        &#34;sBasket_code&#34;: &#34;5A13Qeqx&#34;,
+        &#34;sAuth_token&#34;: &#34;8zQ74sSawCfWza05&#34;,
+        }
+    &gt;&gt;&gt; dOutput = checkout_order(dBriefcase)
+    &gt;&gt;&gt; print(dOutput)
+    {&#34;sStatus&#34;:&#34;ERROR&#34;, &#34;sErr_desc&#34;:&#34;invalid basket token&#34;}
+
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+</dd>
+<dt id="shop.create_order"><code class="name flex">
+<span>def <span class="ident">create_order</span></span>(<span>sAuth_token)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Indicates the intention for the customer to make purchaces.</p>
+<p>Method validates the authentication token (to make sure that is hasn't
+expired). Internally, a 'basket' is opened under this authentication code.</p>
+<p>Architect's Note:</p>
+<p>I would place the customer authentication at this step. The customer would
+be free to browse the shop without any authentication. However, when it
+comes to a financial transaction, we need authentication. Since I don't
+understand the difference between 'create order' and 'update order', I made
+a few assumptions.
+Anyway, In my revised model, I would take in (in the briefcase): the user
+name, the salt of their password. Two level authentication can be done at
+the checkout stage (confirmation via SMS or another channel)</p>
+<h2 id="parameters">Parameters</h2>
+<pre><code>sAuth_token (string)
+Expiring cryptographic token generated during authentication.
+    # Architect's Note:
+    # Since the token expires within about 30 minutes, then I believe
+    # that AES or triple-DES encryption should be sufficient. The token
+    # can be encoded in base-62 (0..9,A..Z,a..z). Going RSA I think
+    # would be overkill. However, the RSA option could be open as a
+    # future security upgrade. If the traffic is lighter, then a simple
+    # random number could be implemented.
+</code></pre>
+<h2 id="returns-valid-data">Returns - Valid data:</h2>
+<p>A dictionary is returned containing key-value pairs. However, the structure
+for valid data is different from error notification. The 'sStatus' key is
+common to both 'valid data' and 'error' returns. It determines the further
+structure of the response</p>
+<p>dOutput (dictionary)</p>
+<pre><code>dOutput["sStatus"] = "OK"
+    A string "OK" is returned as the value to the key "OK". This is a
+    flag to indicate that the request was successful.
+
+dOutput["sBasket_code"] (string)
+    Cryptographic identifier to which "basket" to use.
+    # Architect's Note:
+    # Internally, the 'basket' will have the authentication code
+    # attached to it. At check-out, the authentication will be checked
+    # again.
+</code></pre>
+<h2 id="returns-error-output">Returns - Error output:</h2>
+<p>A dictionary is returned, which has one common key with the 'Valid data'
+return option.</p>
+<p>dOutput (dictionary)</p>
+<pre><code>dOutput["sStatus"] = "ERROR"
+    The string "ERROR" is populated to flag the condition.
+
+dOutput["sErr_desc"] (string)
+    Brief description of error
+
+    "unable to validate token": technical issue with validation process.
+
+    "token expired": timestamp inside the token is now in the past.
+
+    "invalid token": token returned does not match internal token.
+</code></pre>
+<h2 id="raises-exceptions">Raises (exceptions)</h2>
+<p>To be determined</p>
+<h2 id="example-of-correct-use">Example Of Correct Use</h2>
+<pre><code class="python-repl">&gt;&gt;&gt; dOutput = create_order(&quot;8zQ74sSawCfWza05&quot;)
+&gt;&gt;&gt; print(dOutput)
+{&quot;sStatus&quot;:&quot;OK&quot;, &quot;sBasket_code&quot;:&quot;sA13Qeqx&quot;}
+</code></pre>
+<h2 id="example-of-error-response">Example Of Error Response</h2>
+<pre><code class="python-repl">&gt;&gt;&gt; dOutput = create_order(&quot;3zQ74sSawCfWza05&quot;)
+&gt;&gt;&gt; print(dOutput)
+{&quot;sStatus&quot;:&quot;Error&quot;, &quot;sErr_desc&quot;:&quot;invalid token&quot;}
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_order(sAuth_token):
+    &#34;&#34;&#34;Indicates the intention for the customer to make purchaces.
+
+    Method validates the authentication token (to make sure that is hasn&#39;t
+    expired). Internally, a &#39;basket&#39; is opened under this authentication code.
+
+    Architect&#39;s Note:\n
+    I would place the customer authentication at this step. The customer would
+    be free to browse the shop without any authentication. However, when it
+    comes to a financial transaction, we need authentication. Since I don&#39;t
+    understand the difference between &#39;create order&#39; and &#39;update order&#39;, I made
+    a few assumptions.
+    Anyway, In my revised model, I would take in (in the briefcase): the user
+    name, the salt of their password. Two level authentication can be done at
+    the checkout stage (confirmation via SMS or another channel)
+
+    Parameters
+    ----------
+        sAuth_token (string)
+        Expiring cryptographic token generated during authentication.
+            # Architect&#39;s Note:
+            # Since the token expires within about 30 minutes, then I believe
+            # that AES or triple-DES encryption should be sufficient. The token
+            # can be encoded in base-62 (0..9,A..Z,a..z). Going RSA I think
+            # would be overkill. However, the RSA option could be open as a
+            # future security upgrade. If the traffic is lighter, then a simple
+            # random number could be implemented.
+
+    Returns - Valid data:
+    --------
+    A dictionary is returned containing key-value pairs. However, the structure
+    for valid data is different from error notification. The &#39;sStatus&#39; key is
+    common to both &#39;valid data&#39; and &#39;error&#39; returns. It determines the further
+    structure of the response
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;OK&#34;
+            A string &#34;OK&#34; is returned as the value to the key &#34;OK&#34;. This is a
+            flag to indicate that the request was successful.
+
+        dOutput[&#34;sBasket_code&#34;] (string)
+            Cryptographic identifier to which &#34;basket&#34; to use.
+            # Architect&#39;s Note:
+            # Internally, the &#39;basket&#39; will have the authentication code
+            # attached to it. At check-out, the authentication will be checked
+            # again.
+
+    Returns - Error output:
+    -------
+    A dictionary is returned, which has one common key with the &#39;Valid data&#39;
+    return option.
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;ERROR&#34;
+            The string &#34;ERROR&#34; is populated to flag the condition.
+
+        dOutput[&#34;sErr_desc&#34;] (string)
+            Brief description of error
+
+            &#34;unable to validate token&#34;: technical issue with validation process.
+
+            &#34;token expired&#34;: timestamp inside the token is now in the past.
+
+            &#34;invalid token&#34;: token returned does not match internal token.
+
+    Raises (exceptions)
+    ------
+    To be determined
+
+    Example of correct use
+    ------
+    &gt;&gt;&gt; dOutput = create_order(&#34;8zQ74sSawCfWza05&#34;)
+    &gt;&gt;&gt; print(dOutput)
+    {&#34;sStatus&#34;:&#34;OK&#34;, &#34;sBasket_code&#34;:&#34;sA13Qeqx&#34;}
+
+    Example of error response
+    ------
+    &gt;&gt;&gt; dOutput = create_order(&#34;3zQ74sSawCfWza05&#34;)
+    &gt;&gt;&gt; print(dOutput)
+    {&#34;sStatus&#34;:&#34;Error&#34;, &#34;sErr_desc&#34;:&#34;invalid token&#34;}
+
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+</dd>
+<dt id="shop.delete_order"><code class="name flex">
+<span>def <span class="ident">delete_order</span></span>(<span>dBriefcase)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Requests a return of item from customer's basket prior to payment.</p>
+<p>Run 'list_orders' prior to this command. This will give the most up-to-date
+list of items.</p>
+<h2 id="parameters">Parameters</h2>
+<pre><code>dBriefcase (dictionary)
+This is an all-in-one container for transporting variables into the
+method. The keys required are listed below:
+
+    dBriefcase["sBasket_code"] (string)
+        Identifies from which basket we need to remove the items.
+
+    dBriefcase["sItem_id"] (string)
+        Identifier code for the item being removed
+
+    dBriefcase["iQty"] (integer)
+        Number of items to be removed. This allows to reduce the number
+        of items in the basket, say from 3 to 2, by specifying '1'.
+        Integers can't be negative or zero.
+</code></pre>
+<h2 id="returns-valid-data">Returns - Valid data:</h2>
+<p>A dictionary is returned containing key-value pairs. However, the structure
+for valid data is different from error notification. The 'sStatus' key is
+common to both 'valid data' and 'error' returns. It determines the further
+structure of the response</p>
+<p>dOutput (dictionary)</p>
+<pre><code>dOutput["sStatus"] = "OK"
+    A string "OK" is returned as the value to the key "OK". This is a
+    flag to indicate that the request was successful.
+</code></pre>
+<h2 id="returns-error-output">Returns - Error output:</h2>
+<p>A dictionary is returned, which has one common key with the 'Valid data'
+return option.</p>
+<p>dOutput (dictionary)</p>
+<pre><code>dOutput["sStatus"] = "ERROR"
+    The string "ERROR" is populated to flag the condition.
+
+dOutput["sErr_desc"] (string)
+    Brief description of error
+
+    "quantity too low": Attempt to remove 0 or a negative amount of
+        items. Use "update order" to add additional units to an item.
+
+    "quantity too high": Attempt to return too much. Triggered in this
+        example, where the basket has 4 items, and we are trying to
+        delete 5.
+
+    "invalid basket": token returned does not match internal token.
+
+    "basket expired": Time limit has been exceeded in doing the shopping
+
+    "invalid item code": Trying to return a product which is not in the
+        customer's basket.
+</code></pre>
+<h2 id="raises-exceptions">Raises (exceptions)</h2>
+<p>To be determined</p>
+<h2 id="example-of-correct-use">Example Of Correct Use</h2>
+<p>The dictionaries are written across multiple lines to highlight their
+structure.</p>
+<pre><code class="python-repl">&gt;&gt;&gt; dBriefcase = {
+    &quot;sBasket_code&quot;: &quot;sA13Qeqx&quot;,
+    &quot;sItem_id&quot;: &quot;I-00002&quot;,         # Flag
+    &quot;iQty&quot;: 1                      # 3 -&gt; 2 in the basket
+}
+&gt;&gt;&gt; dOutput = update_order(dBriefcase)
+&gt;&gt;&gt; print(dOutput)
+{&quot;sStatus&quot;:&quot;OK&quot;}
+</code></pre>
+<h2 id="example-of-error-response">Example Of Error Response</h2>
+<p>The dictionaries are written across multiple lines to highlight their
+structure.</p>
+<pre><code class="python-repl">&gt;&gt;&gt; dBriefcase = {
+    &quot;sBasket_code&quot;: &quot;sA13Qeqx&quot;,
+    &quot;sItem_id&quot;: &quot;I-00001&quot;,         # Unicorn
+    &quot;iQty&quot;: 1
+}
+&gt;&gt;&gt; dOutput = update_order(dBriefcase)
+&gt;&gt;&gt; print(dOutput)
+{&quot;sStatus&quot;:&quot;ERROR&quot;, &quot;sErr_desc&quot;:&quot;invalid item code&quot;}
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_order(dBriefcase):
+    &#34;&#34;&#34;Requests a return of item from customer&#39;s basket prior to payment.
+
+    Run &#39;list_orders&#39; prior to this command. This will give the most up-to-date
+    list of items.
+
+    Parameters
+    ---------
+        dBriefcase (dictionary)
+        This is an all-in-one container for transporting variables into the
+        method. The keys required are listed below:
+
+            dBriefcase[&#34;sBasket_code&#34;] (string)
+                Identifies from which basket we need to remove the items.
+
+            dBriefcase[&#34;sItem_id&#34;] (string)
+                Identifier code for the item being removed
+
+            dBriefcase[&#34;iQty&#34;] (integer)
+                Number of items to be removed. This allows to reduce the number
+                of items in the basket, say from 3 to 2, by specifying &#39;1&#39;.
+                Integers can&#39;t be negative or zero.
+
+    Returns - Valid data:
+    --------
+    A dictionary is returned containing key-value pairs. However, the structure
+    for valid data is different from error notification. The &#39;sStatus&#39; key is
+    common to both &#39;valid data&#39; and &#39;error&#39; returns. It determines the further
+    structure of the response
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;OK&#34;
+            A string &#34;OK&#34; is returned as the value to the key &#34;OK&#34;. This is a
+            flag to indicate that the request was successful.
+
+    Returns - Error output:
+    -------
+    A dictionary is returned, which has one common key with the &#39;Valid data&#39;
+    return option.
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;ERROR&#34;
+            The string &#34;ERROR&#34; is populated to flag the condition.
+
+        dOutput[&#34;sErr_desc&#34;] (string)
+            Brief description of error
+
+            &#34;quantity too low&#34;: Attempt to remove 0 or a negative amount of
+                items. Use &#34;update order&#34; to add additional units to an item.
+
+            &#34;quantity too high&#34;: Attempt to return too much. Triggered in this
+                example, where the basket has 4 items, and we are trying to
+                delete 5.
+
+            &#34;invalid basket&#34;: token returned does not match internal token.
+
+            &#34;basket expired&#34;: Time limit has been exceeded in doing the shopping
+
+            &#34;invalid item code&#34;: Trying to return a product which is not in the
+                customer&#39;s basket.
+
+    Raises (exceptions)
+    ------
+    To be determined
+
+    Example of correct use
+    ------
+    The dictionaries are written across multiple lines to highlight their
+    structure.
+
+    &gt;&gt;&gt; dBriefcase = {
+        &#34;sBasket_code&#34;: &#34;sA13Qeqx&#34;,
+        &#34;sItem_id&#34;: &#34;I-00002&#34;,         # Flag
+        &#34;iQty&#34;: 1                      # 3 -&gt; 2 in the basket
+    }
+    &gt;&gt;&gt; dOutput = update_order(dBriefcase)
+    &gt;&gt;&gt; print(dOutput)
+    {&#34;sStatus&#34;:&#34;OK&#34;}
+
+    Example of error response
+    ------
+    The dictionaries are written across multiple lines to highlight their
+    structure.
+
+    &gt;&gt;&gt; dBriefcase = {
+        &#34;sBasket_code&#34;: &#34;sA13Qeqx&#34;,
+        &#34;sItem_id&#34;: &#34;I-00001&#34;,         # Unicorn
+        &#34;iQty&#34;: 1
+    }
+    &gt;&gt;&gt; dOutput = update_order(dBriefcase)
+    &gt;&gt;&gt; print(dOutput)
+    {&#34;sStatus&#34;:&#34;ERROR&#34;, &#34;sErr_desc&#34;:&#34;invalid item code&#34;}
+    &#34;&#34;&#34;
+
+    pass</code></pre>
+</details>
+</dd>
+<dt id="shop.list_orders"><code class="name flex">
+<span>def <span class="ident">list_orders</span></span>(<span>sBasket_code)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gives customer access to the items in their 'basket'.</p>
+<p>Returns a structure which includes all the items which the customer intends
+to purchase. This is the net result of 'update_order' and 'delete_order'</p>
+<h2 id="parameters">Parameters</h2>
+<p>sBasket_code (string)</p>
+<pre><code>Single-use cryptographic code which joins items purchased with the
+purchaser
+
+    # Architect's Note: I try not to repeat definitions which were used
+    # in a previous field. From experience, it is always helpful to have
+    # multiple definitions of a certain item. Also, not every person's
+    # English is good. Alternative descriptions will assist in a better
+    # understanding of the concept.
+</code></pre>
+<h2 id="returns-valid-data">Returns - Valid data:</h2>
+<p>A dictionary is returned containing key-value pairs. However, the structure
+for valid data is different from error notification. The 'sStatus' key is
+common to both 'valid data' and 'error' returns. It determines the further
+structure of the response</p>
+<p>Architect's Note: I have deliberately avoided adding up the totals, adding
+delivery, ect. Psychologically, the client would see the 'high' bill and
+stop shopping. Hence, the surprises and the tax breakdown will be only
+revealed at the final invoice.</p>
+<p>dOutput (dictionary)</p>
+<pre><code>dOutput["sStatus"] = "OK"
+    The string "OK" is returned under the "sStatus" key, to indicate
+    that non-error data is available.
+
+dOutput["aItems"] (list of dictionaries)
+    Lists items reserved for purchace. Each item in the list has the
+    following structure. The 'n' (integer) in the structure indexes the
+    item number on the list
+
+    dOutput["aItems"][n]["sItem_id"] (string)
+        Identifier of the item purchased.
+
+    dOutput["aItems"][n]["iQty"] (integer)
+        How many items are on order
+
+    dOutput["aItems"][n]["sDesc"] (string)
+        Description of the item
+
+    dOutput["aItems"][n]["sSize"] (string)
+        If the item (like clothing or shoes) comes in various sizes, it
+        is specified here.
+
+    dOutput["aItems"][n]["sColour"] (string)
+        Main colour or pattern of the item.
+
+    dOutput["aItems"][n]["sItem_currency"] (string)
+        ISO-4217 currency code for the items purchased. Usually it is
+        the currency of the customer's region.
+
+    dOutput["aItems"][n]["fUnit_price"] (float)
+        Price of the single item in the "sCurrency"
+
+    dOutput["aItems"][n]["fTotal_price"] (float)
+        Price for all the copies of the item.
+</code></pre>
+<h2 id="returns-error-output">Returns - Error output:</h2>
+<p>A dictionary is returned, which has one common key with the 'Valid data'
+return option.</p>
+<p>dOutput (dictionary)</p>
+<pre><code>dOutput["sStatus"] = "ERROR"
+    The string "ERROR" is populated to flag the condition.
+
+dOutput["sErr_desc"] (string)
+    Brief description of error
+
+    "unable to validate token": technical issue with validation process.
+
+    "token expired": timestamp inside the token is now in the past.
+
+    "invalid token": token returned does not match internal token.
+</code></pre>
+<h2 id="raises-exceptions">Raises (exceptions)</h2>
+<p>To be determined</p>
+<h2 id="example-of-correct-use">Example Of Correct Use</h2>
+<p>The dictionaries are written across multiple lines to highlight their
+structure.</p>
+<pre><code class="python-repl">&gt;&gt;&gt; dOutput = list_orders(&quot;sA13Qeqx&quot;)
+&gt;&gt;&gt; print(dOutput)
+{
+    &quot;sStatus&quot;:&quot;OK&quot;,
+    &quot;aItems&quot;:[
+        {
+            &quot;sItem_id&quot;:&quot;I-00002&quot;,
+            &quot;iQty&quot;:3,
+            &quot;sDesc&quot;:&quot;Flag of Quidthovice&quot;,
+            &quot;sSize&quot;:150cm x 100cm&quot;,
+            &quot;sColour&quot;:&quot;State colours&quot;,
+            &quot;sItem_currency&quot;:&quot;PLN&quot;,
+            &quot;fUnit_price&quot;:&quot;14.99&quot;,
+            &quot;fTotal_price&quot;:&quot;44.97&quot;
+        },
+        {
+            ...
+        }
+    ]
+}
+</code></pre>
+<h2 id="example-of-error-response">Example Of Error Response</h2>
+<pre><code class="python-repl">&gt;&gt;&gt; dOutput = list_orders(&quot;5A13Qeqx&quot;)
+&gt;&gt;&gt; print(dOutput)
+{&quot;sStatus&quot;:&quot;Error&quot;, &quot;sErr_desc&quot;:&quot;invalid token&quot;}
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def list_orders(sBasket_code):
+    &#34;&#34;&#34;Gives customer access to the items in their &#39;basket&#39;.
+
+    Returns a structure which includes all the items which the customer intends
+    to purchase. This is the net result of &#39;update_order&#39; and &#39;delete_order&#39;
+
+    Parameters
+    -------
+    sBasket_code (string)
+
+        Single-use cryptographic code which joins items purchased with the
+        purchaser
+
+            # Architect&#39;s Note: I try not to repeat definitions which were used
+            # in a previous field. From experience, it is always helpful to have
+            # multiple definitions of a certain item. Also, not every person&#39;s
+            # English is good. Alternative descriptions will assist in a better
+            # understanding of the concept.
+
+    Returns - Valid data:
+    -------
+    A dictionary is returned containing key-value pairs. However, the structure
+    for valid data is different from error notification. The &#39;sStatus&#39; key is
+    common to both &#39;valid data&#39; and &#39;error&#39; returns. It determines the further
+    structure of the response\n
+    Architect&#39;s Note: I have deliberately avoided adding up the totals, adding
+    delivery, ect. Psychologically, the client would see the &#39;high&#39; bill and
+    stop shopping. Hence, the surprises and the tax breakdown will be only
+    revealed at the final invoice.
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;OK&#34;
+            The string &#34;OK&#34; is returned under the &#34;sStatus&#34; key, to indicate
+            that non-error data is available.
+
+        dOutput[&#34;aItems&#34;] (list of dictionaries)
+            Lists items reserved for purchace. Each item in the list has the
+            following structure. The &#39;n&#39; (integer) in the structure indexes the
+            item number on the list
+
+            dOutput[&#34;aItems&#34;][n][&#34;sItem_id&#34;] (string)
+                Identifier of the item purchased.
+
+            dOutput[&#34;aItems&#34;][n][&#34;iQty&#34;] (integer)
+                How many items are on order
+
+            dOutput[&#34;aItems&#34;][n][&#34;sDesc&#34;] (string)
+                Description of the item
+
+            dOutput[&#34;aItems&#34;][n][&#34;sSize&#34;] (string)
+                If the item (like clothing or shoes) comes in various sizes, it
+                is specified here.
+
+            dOutput[&#34;aItems&#34;][n][&#34;sColour&#34;] (string)
+                Main colour or pattern of the item.
+
+            dOutput[&#34;aItems&#34;][n][&#34;sItem_currency&#34;] (string)
+                ISO-4217 currency code for the items purchased. Usually it is
+                the currency of the customer&#39;s region.
+
+            dOutput[&#34;aItems&#34;][n][&#34;fUnit_price&#34;] (float)
+                Price of the single item in the &#34;sCurrency&#34;
+
+            dOutput[&#34;aItems&#34;][n][&#34;fTotal_price&#34;] (float)
+                Price for all the copies of the item.
+
+    Returns - Error output:
+    -------
+    A dictionary is returned, which has one common key with the &#39;Valid data&#39;
+    return option.
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;ERROR&#34;
+            The string &#34;ERROR&#34; is populated to flag the condition.
+
+        dOutput[&#34;sErr_desc&#34;] (string)
+            Brief description of error
+
+            &#34;unable to validate token&#34;: technical issue with validation process.
+
+            &#34;token expired&#34;: timestamp inside the token is now in the past.
+
+            &#34;invalid token&#34;: token returned does not match internal token.
+
+    Raises (exceptions)
+    ------
+    To be determined
+
+    Example of correct use
+    ------
+    The dictionaries are written across multiple lines to highlight their
+    structure.
+
+    &gt;&gt;&gt; dOutput = list_orders(&#34;sA13Qeqx&#34;)
+    &gt;&gt;&gt; print(dOutput)
+    {
+        &#34;sStatus&#34;:&#34;OK&#34;,
+        &#34;aItems&#34;:[
+            {
+                &#34;sItem_id&#34;:&#34;I-00002&#34;,
+                &#34;iQty&#34;:3,
+                &#34;sDesc&#34;:&#34;Flag of Quidthovice&#34;,
+                &#34;sSize&#34;:150cm x 100cm&#34;,
+                &#34;sColour&#34;:&#34;State colours&#34;,
+                &#34;sItem_currency&#34;:&#34;PLN&#34;,
+                &#34;fUnit_price&#34;:&#34;14.99&#34;,
+                &#34;fTotal_price&#34;:&#34;44.97&#34;
+            },
+            {
+                ...
+            }
+        ]
+    }
+
+    Example of error response
+    -------
+    &gt;&gt;&gt; dOutput = list_orders(&#34;5A13Qeqx&#34;)
+    &gt;&gt;&gt; print(dOutput)
+    {&#34;sStatus&#34;:&#34;Error&#34;, &#34;sErr_desc&#34;:&#34;invalid token&#34;}
+
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+</dd>
+<dt id="shop.list_products"><code class="name flex">
+<span>def <span class="ident">list_products</span></span>(<span>dBriefcase)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns information about items available for purchase in the shop.</p>
+<p>Method looks through the database based on the search and indexing
+parameters provided. A structure is then returned. Note that error handling
+is incoperated into the response.</p>
+<h2 id="parameters">Parameters</h2>
+<pre><code>dBriefcase (dictionary)
+This is an all-in-one container for transporting variables into the
+method. The keys required are listed below:
+
+    dBriefcase["iIdx"] (integer)
+        Index to the paginated data. It is used to break up a long
+        list into smaller pieces. For example, if there are 314 items
+        for a particular keyword, the caller may want to fetch in
+        batches of 5. 'iIdx' will be set to 0 for the first batch and
+        to 4 for the second, and so on.
+
+    dBriefcase["iMax_res"] (integer)
+        Maximum number of results in this output.
+
+    dBriefcase["sItem_filter"] (string, none)
+        (string) datatype:
+            Keyword for searching the 'description' fields of products
+        (none) datatype:
+            Show all products.
+</code></pre>
+<h2 id="returns-valid-data">Returns - Valid data</h2>
+<p>A dictionary is returned containing key-value pairs. However, the structure
+for valid data is different from error notification. The 'sStatus' key is
+common to both 'valid data' and 'error' returns. It determines the further
+structure of the response</p>
+<p>dOutput (dictionary)</p>
+<pre><code>dOutput["sStatus"] = "OK"
+    The string "OK" is returned under the "sStatus" key, to indicate
+    that non-error data is available.
+
+dOutput["iIdx_n"] (integer)
+    Actual index, within the specified search, to the last item
+    returned. If incremented, it can be used as the 'dBriefcase["idx"]'
+    input in the next search to retrieve the next batch of items.
+
+dOutput["iSearch_tot"] (integer)
+    Total number of items in the search
+
+dOutput["aItems"] (list of dictionaries)
+    Information about items requested. Each item in the list has the
+    following structure. The 'n' (integer) in the structure indexes the
+    item number on the list
+
+    dOutput["aItems"][n]["sItem_id"] (string)
+        Unique item identifier as a string. May be a sequential
+        alpha-numeric code.
+
+    dOutput["aItems"][n]["sBrand"] (string)
+        Manufacturer name.
+
+    dOutput["aItems"][n]["sDesc"] (string)
+        Searchable item description
+
+    dOutput["aItems"][n]["sSize"] (string)
+        If items are available in varous sizes (for example clothing,
+        TV's) then a string is specifed.
+        If the item is a 'one-size-fits-all', then the string 'N/A'
+        is used ('Not applicable')
+
+        So, "blue jeans size 38" will have a seperate entry to "blue
+        jeans size 36". Also "black jeans size 38" will also be
+        seperate.
+
+    dOutput["aItems"][n]["sColour"] (string)
+        Main colour or pattern of the item.
+
+        So, "blue jeans size 38" will have a seperate entry to "black
+        jeans size 38". Also "blue jeans size 38" will also be
+        seperate.
+
+    dOutput["aItems"][n]["fPrice"] (float)
+        Price of the item in the "sCurrency" (see below) units.
+
+    dOutput["aItems"][n]["sCurrency"] (string)
+        ISO-4217 currency code, in which the item is priced. For
+        example, the Polish Zloty has the code "PLN". The string "PLN"
+        would be entered in this field
+
+    dOutput["aItems"][n]["iStock"] (integer)
+        How many items are currently available for purchase.
+
+    dOutput["aItems"][n]["aPhotos"] (list of strings)
+        Links to photos of the item
+</code></pre>
+<h2 id="returns-error-output">Returns &ndash; Error output</h2>
+<p>A dictionary is returned containing key-value pairs. However, the structure
+for valid data is different from error notification.</p>
+<p>dOutput (dictionary)</p>
+<pre><code>dOutput["sStatus"] = "ERROR"
+    The string "ERROR" is returned under the "sStatus" key, to indicate
+    that error information is available.
+
+dOutput["sErr_desc"] (string)
+    Brief description of the error.
+
+    "data validation": Incorrectly formatted input
+
+    "item not found": Search yielded 0 results
+
+    "connection error": Unable to reach the database
+
+    "internal error": reserved for an error which could not be
+        predicted at the design stage.
+</code></pre>
+<h2 id="raises-exceptions">Raises (exceptions)</h2>
+<p>To be determined</p>
+<h2 id="example-of-correct-use">Example Of Correct Use</h2>
+<p>The dictionaries are written across multiple lines to highlight their
+structure.</p>
+<pre><code class="python-repl">&gt;&gt;&gt; dBriefcase = {
+    &quot;iIdx&quot;: 0,
+    &quot;iMax_res&quot;: 5,
+    &quot;sItem_filter&quot;: None
+}
+&gt;&gt;&gt; dOutput = list_products(dBriefcase)
+&gt;&gt;&gt; print(dOutput)
+{
+    &quot;sStatus&quot;:&quot;OK&quot;,
+    &quot;iIdx_n&quot;:1,
+    &quot;iSearch_tot&quot;:2,
+    &quot;aItems&quot;:[
+        {
+            &quot;sItem_id&quot;:&quot;I-00001&quot;,
+            &quot;sBrand&quot;:&quot;Vaenesston Zoo&quot;,
+            &quot;sDesc&quot;:&quot;Female unicorn&quot;,
+            &quot;sSize&quot;:&quot;Medium horse (16hh)&quot;,
+            &quot;sColour&quot;:&quot;White&quot;,
+            &quot;fPrice&quot;:25000000.00,
+            &quot;sCurrency&quot;:&quot;USD&quot;,
+            &quot;iStock&quot;:1,
+            &quot;dPhotos&quot;:[
+                &quot;https://i.pinimg.com/564x/0c/6d/34/0c6d34398d9a464f6aafb6f8d32dee38.jpg&quot;
+            ]
+        },
+        {
+            &quot;sItem_id&quot;:&quot;I-00002&quot;,
+            &quot;sBrand&quot;:&quot;Handmade Flags&quot;,
+            &quot;sDesc&quot;:&quot;Flag of Quidthovice&quot;,
+            &quot;sSize&quot;:&quot;150cm x 100cm&quot;,
+            &quot;sColour&quot;:&quot;State colours&quot;,
+            &quot;fPrice&quot;:14.99,
+            &quot;sCurrency&quot;:&quot;PLN&quot;,
+            &quot;iStock&quot;:100,
+            &quot;dPhotos&quot;:[
+                &quot;https://i.pinimg.com/originals/b4/5a/4c/b45a4c2bc6a626a269548e461ee84301.jpg&quot;
+            ]
+        }
+    ]
+}
+</code></pre>
+<h2 id="example-of-error-response">Example Of Error Response</h2>
+<p>The dictionaries are written across multiple lines to highlight their
+structure.</p>
+<pre><code class="python-repl">&gt;&gt;&gt; dBriefcase = {
+    &quot;iIdx&quot;: 0,
+    &quot;iMax_res&quot;: 5,
+    &quot;sItem_filter&quot;: Male unicorn
+}
+&gt;&gt;&gt; dOutput = list_products(dBriefcase)
+&gt;&gt;&gt; print(dOutput)
+{
+    &quot;sStatus&quot;:&quot;ERROR&quot;,
+    &quot;sErr_desc&quot;:&quot;item not found&quot;
+}
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def list_products(dBriefcase):
+    &#34;&#34;&#34;Returns information about items available for purchase in the shop.
+
+    Method looks through the database based on the search and indexing
+    parameters provided. A structure is then returned. Note that error handling
+    is incoperated into the response.
+
+    Parameters
+    ----------
+        dBriefcase (dictionary)
+        This is an all-in-one container for transporting variables into the
+        method. The keys required are listed below:
+
+            dBriefcase[&#34;iIdx&#34;] (integer)
+                Index to the paginated data. It is used to break up a long
+                list into smaller pieces. For example, if there are 314 items
+                for a particular keyword, the caller may want to fetch in
+                batches of 5. &#39;iIdx&#39; will be set to 0 for the first batch and
+                to 4 for the second, and so on.
+
+            dBriefcase[&#34;iMax_res&#34;] (integer)
+                Maximum number of results in this output.
+
+            dBriefcase[&#34;sItem_filter&#34;] (string, none)
+                (string) datatype:
+                    Keyword for searching the &#39;description&#39; fields of products
+                (none) datatype:
+                    Show all products.
+
+    Returns - Valid data
+    -------
+    A dictionary is returned containing key-value pairs. However, the structure
+    for valid data is different from error notification. The &#39;sStatus&#39; key is
+    common to both &#39;valid data&#39; and &#39;error&#39; returns. It determines the further
+    structure of the response
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;OK&#34;
+            The string &#34;OK&#34; is returned under the &#34;sStatus&#34; key, to indicate
+            that non-error data is available.
+
+        dOutput[&#34;iIdx_n&#34;] (integer)
+            Actual index, within the specified search, to the last item
+            returned. If incremented, it can be used as the &#39;dBriefcase[&#34;idx&#34;]&#39;
+            input in the next search to retrieve the next batch of items.
+
+        dOutput[&#34;iSearch_tot&#34;] (integer)
+            Total number of items in the search
+
+        dOutput[&#34;aItems&#34;] (list of dictionaries)
+            Information about items requested. Each item in the list has the
+            following structure. The &#39;n&#39; (integer) in the structure indexes the
+            item number on the list
+
+            dOutput[&#34;aItems&#34;][n][&#34;sItem_id&#34;] (string)
+                Unique item identifier as a string. May be a sequential
+                alpha-numeric code.
+
+            dOutput[&#34;aItems&#34;][n][&#34;sBrand&#34;] (string)
+                Manufacturer name.
+
+            dOutput[&#34;aItems&#34;][n][&#34;sDesc&#34;] (string)
+                Searchable item description
+
+            dOutput[&#34;aItems&#34;][n][&#34;sSize&#34;] (string)
+                If items are available in varous sizes (for example clothing,
+                TV&#39;s) then a string is specifed.
+                If the item is a &#39;one-size-fits-all&#39;, then the string &#39;N/A&#39;
+                is used (&#39;Not applicable&#39;)
+
+                So, &#34;blue jeans size 38&#34; will have a seperate entry to &#34;blue
+                jeans size 36&#34;. Also &#34;black jeans size 38&#34; will also be
+                seperate.
+
+            dOutput[&#34;aItems&#34;][n][&#34;sColour&#34;] (string)
+                Main colour or pattern of the item.
+
+                So, &#34;blue jeans size 38&#34; will have a seperate entry to &#34;black
+                jeans size 38&#34;. Also &#34;blue jeans size 38&#34; will also be
+                seperate.
+
+            dOutput[&#34;aItems&#34;][n][&#34;fPrice&#34;] (float)
+                Price of the item in the &#34;sCurrency&#34; (see below) units.
+
+            dOutput[&#34;aItems&#34;][n][&#34;sCurrency&#34;] (string)
+                ISO-4217 currency code, in which the item is priced. For
+                example, the Polish Zloty has the code &#34;PLN&#34;. The string &#34;PLN&#34;
+                would be entered in this field
+
+            dOutput[&#34;aItems&#34;][n][&#34;iStock&#34;] (integer)
+                How many items are currently available for purchase.
+
+            dOutput[&#34;aItems&#34;][n][&#34;aPhotos&#34;] (list of strings)
+                Links to photos of the item
+
+    Returns -- Error output
+    -------
+    A dictionary is returned containing key-value pairs. However, the structure
+    for valid data is different from error notification.
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;ERROR&#34;
+            The string &#34;ERROR&#34; is returned under the &#34;sStatus&#34; key, to indicate
+            that error information is available.
+
+        dOutput[&#34;sErr_desc&#34;] (string)
+            Brief description of the error.
+
+            &#34;data validation&#34;: Incorrectly formatted input
+
+            &#34;item not found&#34;: Search yielded 0 results
+
+            &#34;connection error&#34;: Unable to reach the database
+
+            &#34;internal error&#34;: reserved for an error which could not be
+                predicted at the design stage.
+
+    Raises (exceptions)
+    ------
+    To be determined
+
+    Example of correct use
+    ------
+    The dictionaries are written across multiple lines to highlight their
+    structure.
+
+    &gt;&gt;&gt; dBriefcase = {
+        &#34;iIdx&#34;: 0,
+        &#34;iMax_res&#34;: 5,
+        &#34;sItem_filter&#34;: None
+    }
+    &gt;&gt;&gt; dOutput = list_products(dBriefcase)
+    &gt;&gt;&gt; print(dOutput)
+    {
+        &#34;sStatus&#34;:&#34;OK&#34;,
+        &#34;iIdx_n&#34;:1,
+        &#34;iSearch_tot&#34;:2,
+        &#34;aItems&#34;:[
+            {
+                &#34;sItem_id&#34;:&#34;I-00001&#34;,
+                &#34;sBrand&#34;:&#34;Vaenesston Zoo&#34;,
+                &#34;sDesc&#34;:&#34;Female unicorn&#34;,
+                &#34;sSize&#34;:&#34;Medium horse (16hh)&#34;,
+                &#34;sColour&#34;:&#34;White&#34;,
+                &#34;fPrice&#34;:25000000.00,
+                &#34;sCurrency&#34;:&#34;USD&#34;,
+                &#34;iStock&#34;:1,
+                &#34;dPhotos&#34;:[
+                    &#34;https://i.pinimg.com/564x/0c/6d/34/0c6d34398d9a464f6aafb6f8d32dee38.jpg&#34;
+                ]
+            },
+            {
+                &#34;sItem_id&#34;:&#34;I-00002&#34;,
+                &#34;sBrand&#34;:&#34;Handmade Flags&#34;,
+                &#34;sDesc&#34;:&#34;Flag of Quidthovice&#34;,
+                &#34;sSize&#34;:&#34;150cm x 100cm&#34;,
+                &#34;sColour&#34;:&#34;State colours&#34;,
+                &#34;fPrice&#34;:14.99,
+                &#34;sCurrency&#34;:&#34;PLN&#34;,
+                &#34;iStock&#34;:100,
+                &#34;dPhotos&#34;:[
+                    &#34;https://i.pinimg.com/originals/b4/5a/4c/b45a4c2bc6a626a269548e461ee84301.jpg&#34;
+                ]
+            }
+        ]
+    }
+
+    Example of error response
+    ------
+    The dictionaries are written across multiple lines to highlight their
+    structure.
+
+    &gt;&gt;&gt; dBriefcase = {
+        &#34;iIdx&#34;: 0,
+        &#34;iMax_res&#34;: 5,
+        &#34;sItem_filter&#34;: Male unicorn
+    }
+    &gt;&gt;&gt; dOutput = list_products(dBriefcase)
+    &gt;&gt;&gt; print(dOutput)
+    {
+        &#34;sStatus&#34;:&#34;ERROR&#34;,
+        &#34;sErr_desc&#34;:&#34;item not found&#34;
+    }
+    &#34;&#34;&#34;
+
+    pass</code></pre>
+</details>
+</dd>
+<dt id="shop.update_order"><code class="name flex">
+<span>def <span class="ident">update_order</span></span>(<span>dBriefcase)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Requests the selected item to be reserved for purchasing.</p>
+<h2 id="parameters">Parameters:</h2>
+<pre><code>dBriefcase (dictionary)
+This is a container transporting other parameters. It contains the
+following keys:
+
+    dBriefcase["sBasket_code"] (string)
+        One-time cryptographic token used to identify the correct
+        'basket'.
+
+    dBriefcase["sItem_id"] (string)
+        Identification code for the product being purchased.
+
+    dBriefcase["iQty"] (integer)
+        Number of items purchased.
+</code></pre>
+<h2 id="returns-valid-data">Returns - Valid data</h2>
+<p>A dictionary is returned containing key-value pairs. However, the structure
+for valid data is different from error notification. The 'sStatus' key is
+common to both 'valid data' and 'error' returns. It determines the further
+structure of the response</p>
+<p>dOutput (dictionary)</p>
+<pre><code>dOutput["sStatus"] = "OK"
+    The string "OK" is returned under the "sStatus" key, to indicate
+    that non-error data is available.
+</code></pre>
+<h2 id="returns-error-output">Returns - Error output:</h2>
+<p>A dictionary is returned, which has one common key with the 'Valid data'
+return option.</p>
+<p>dOutput (dictionary)</p>
+<pre><code>dOutput["sStatus"] = "ERROR"
+    The string "ERROR" is populated to flag the condition.
+
+dOutput["sErr_desc"] (string)
+    Brief description of error
+
+    "data validation": Syntax error in the input
+
+    "item sold out": No stock is available at this time.
+
+    "partial order": Customer ordered more than stock available.
+        'Business rules' will deterimine how to handle this situation
+
+    "not available": Business rules say that this item can't be sold to
+        this customer. For example, a pneumatic pistol (pellet gun) may
+        only be legally available in certain regions.
+
+    "invalid currency": Business rules may say that a Polish customer
+        is not allowed to purchase items quoted in, lets say "USD".
+
+    "maximum quantity exceeded": Some items have limits on how much one
+        customer may purchase. Going over that limit will trigger this
+        response
+
+    "item does not exist": dBriefcase['sItem_id'] does not exist.
+
+    "invalid basket": token returned does not match internal token.
+
+    "basket expired": Time limit has been exceeded in doing the shopping
+</code></pre>
+<h2 id="raises-exceptions">Raises (exceptions)</h2>
+<p>To be determined</p>
+<h2 id="example-of-correct-use">Example Of Correct Use</h2>
+<p>The dictionaries are written across multiple lines to highlight their
+structure.</p>
+<pre><code class="python-repl">&gt;&gt;&gt; dBriefcase = {
+    &quot;sBasket_code&quot;: &quot;sA13Qeqx&quot;,
+    &quot;sItem_id&quot;: &quot;I-00002&quot;,         # Flag
+    &quot;iQty&quot;: 3
+}
+&gt;&gt;&gt; dOutput = update_order(dBriefcase)
+&gt;&gt;&gt; print(dOutput)
+{&quot;sStatus&quot;:&quot;OK&quot;}
+</code></pre>
+<h2 id="example-of-error-response">Example of error response.</h2>
+<pre><code class="python-repl">&gt;&gt;&gt; dBriefcase = {
+    &quot;sBasket_code&quot;: &quot;sA13Qeqx&quot;,
+    &quot;sItem_id&quot;: &quot;I-00001&quot;,         # Unicorn
+    &quot;iQty&quot;: 1
+}
+&gt;&gt;&gt; dOutput = update_order(dBriefcase)
+&gt;&gt;&gt; print(dOutput)
+{&quot;sStatus&quot;:&quot;ERROR&quot;, &quot;sErr_desc&quot;:&quot;invalid currency&quot;}
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_order(dBriefcase):
+    &#34;&#34;&#34; Requests the selected item to be reserved for purchasing.
+
+    Parameters:
+    ----------
+        dBriefcase (dictionary)
+        This is a container transporting other parameters. It contains the
+        following keys:
+
+            dBriefcase[&#34;sBasket_code&#34;] (string)
+                One-time cryptographic token used to identify the correct
+                &#39;basket&#39;.
+
+            dBriefcase[&#34;sItem_id&#34;] (string)
+                Identification code for the product being purchased.
+
+            dBriefcase[&#34;iQty&#34;] (integer)
+                Number of items purchased.
+
+    Returns - Valid data
+    -------
+    A dictionary is returned containing key-value pairs. However, the structure
+    for valid data is different from error notification. The &#39;sStatus&#39; key is
+    common to both &#39;valid data&#39; and &#39;error&#39; returns. It determines the further
+    structure of the response
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;OK&#34;
+            The string &#34;OK&#34; is returned under the &#34;sStatus&#34; key, to indicate
+            that non-error data is available.
+
+    Returns - Error output:
+    -------
+    A dictionary is returned, which has one common key with the &#39;Valid data&#39;
+    return option.
+
+    dOutput (dictionary)
+
+        dOutput[&#34;sStatus&#34;] = &#34;ERROR&#34;
+            The string &#34;ERROR&#34; is populated to flag the condition.
+
+        dOutput[&#34;sErr_desc&#34;] (string)
+            Brief description of error
+
+            &#34;data validation&#34;: Syntax error in the input
+
+            &#34;item sold out&#34;: No stock is available at this time.
+
+            &#34;partial order&#34;: Customer ordered more than stock available.
+                &#39;Business rules&#39; will deterimine how to handle this situation
+
+            &#34;not available&#34;: Business rules say that this item can&#39;t be sold to
+                this customer. For example, a pneumatic pistol (pellet gun) may
+                only be legally available in certain regions.
+
+            &#34;invalid currency&#34;: Business rules may say that a Polish customer
+                is not allowed to purchase items quoted in, lets say &#34;USD&#34;.
+
+            &#34;maximum quantity exceeded&#34;: Some items have limits on how much one
+                customer may purchase. Going over that limit will trigger this
+                response
+
+            &#34;item does not exist&#34;: dBriefcase[&#39;sItem_id&#39;] does not exist.
+
+            &#34;invalid basket&#34;: token returned does not match internal token.
+
+            &#34;basket expired&#34;: Time limit has been exceeded in doing the shopping
+
+    Raises (exceptions)
+    ------
+    To be determined
+
+    Example of correct use
+    ------
+    The dictionaries are written across multiple lines to highlight their
+    structure.
+
+    &gt;&gt;&gt; dBriefcase = {
+        &#34;sBasket_code&#34;: &#34;sA13Qeqx&#34;,
+        &#34;sItem_id&#34;: &#34;I-00002&#34;,         # Flag
+        &#34;iQty&#34;: 3
+    }
+    &gt;&gt;&gt; dOutput = update_order(dBriefcase)
+    &gt;&gt;&gt; print(dOutput)
+    {&#34;sStatus&#34;:&#34;OK&#34;}
+
+    Example of error response.
+    ------
+    &gt;&gt;&gt; dBriefcase = {
+        &#34;sBasket_code&#34;: &#34;sA13Qeqx&#34;,
+        &#34;sItem_id&#34;: &#34;I-00001&#34;,         # Unicorn
+        &#34;iQty&#34;: 1
+    }
+    &gt;&gt;&gt; dOutput = update_order(dBriefcase)
+    &gt;&gt;&gt; print(dOutput)
+    {&#34;sStatus&#34;:&#34;ERROR&#34;, &#34;sErr_desc&#34;:&#34;invalid currency&#34;}
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul>
+<li><a href="#recruitment-task-for-ulam-labs-wrocaw-poland-prepared-by-grzegorz-wochlik">Recruitment task for Ulam Labs (Wrocław, Poland) prepared by Grzegorz Wochlik</a></li>
+</ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="shop.checkout_order" href="#shop.checkout_order">checkout_order</a></code></li>
+<li><code><a title="shop.create_order" href="#shop.create_order">create_order</a></code></li>
+<li><code><a title="shop.delete_order" href="#shop.delete_order">delete_order</a></code></li>
+<li><code><a title="shop.list_orders" href="#shop.list_orders">list_orders</a></code></li>
+<li><code><a title="shop.list_products" href="#shop.list_products">list_products</a></code></li>
+<li><code><a title="shop.update_order" href="#shop.update_order">update_order</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.1</a>.</p>
+</footer>
+</body>
+</html>
