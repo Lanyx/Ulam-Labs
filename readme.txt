@@ -7,4 +7,9 @@ However, the documentation has been written into the code as a docstring. It was
 extracted with a tool into the static http page.
 
 I added my personal comments and technical experience as "Architect's Notes".
-I hope that this meets the task requirements. 
+I hope that this meets the task requirements.
+
+INSTRUCTIONS:
+Please copy the static "shop.html" file. It contains all the documentation.
+
+Alternatively, "shop.py" contains the same information formatted as a docstring.
