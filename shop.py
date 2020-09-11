@@ -659,10 +659,9 @@ def list_orders(sBasket_code):
     for valid data is different from error notification. The 'sStatus' key is
     common to both 'valid data' and 'error' returns. It determines the further
     structure of the response\n
-    Architect's Note: I have deliberately avoided adding up the totals, adding
-    delivery, ect. Psychologically, the client would see the 'high' bill and
-    stop shopping. Hence, the surprises and the tax breakdown will be only
-    revealed at the final invoice.
+    Architect's Note: I have omitted the sub-total and the delivery fee. The
+    decision is left to "business rules" if this data should be included at this
+    stage. Also, the frontend would be able to do this calculation.
 
     dOutput (dictionary)
 

@@ -714,10 +714,9 @@ def list_orders(sBasket_code):
     for valid data is different from error notification. The &#39;sStatus&#39; key is
     common to both &#39;valid data&#39; and &#39;error&#39; returns. It determines the further
     structure of the response\n
-    Architect&#39;s Note: I have deliberately avoided adding up the totals, adding
-    delivery, ect. Psychologically, the client would see the &#39;high&#39; bill and
-    stop shopping. Hence, the surprises and the tax breakdown will be only
-    revealed at the final invoice.
+    Architect&#39;s Note: I have omitted the sub-total and the delivery fee. The
+    decision is left to &#34;business rules&#34; if this data should be included at this
+    stage. Also, the frontend would be able to do this calculation.
 
     dOutput (dictionary)
 
@@ -1436,10 +1435,9 @@ purchaser
 for valid data is different from error notification. The 'sStatus' key is
 common to both 'valid data' and 'error' returns. It determines the further
 structure of the response</p>
-<p>Architect's Note: I have deliberately avoided adding up the totals, adding
-delivery, ect. Psychologically, the client would see the 'high' bill and
-stop shopping. Hence, the surprises and the tax breakdown will be only
-revealed at the final invoice.</p>
+<p>Architect's Note: I have omitted the sub-total and the delivery fee. The
+decision is left to "business rules" if this data should be included at this
+stage. Also, the frontend would be able to do this calculation.</p>
 <p>dOutput (dictionary)</p>
 <pre><code>dOutput["sStatus"] = "OK"
     The string "OK" is returned under the "sStatus" key, to indicate
@@ -1552,10 +1550,9 @@ structure.</p>
     for valid data is different from error notification. The &#39;sStatus&#39; key is
     common to both &#39;valid data&#39; and &#39;error&#39; returns. It determines the further
     structure of the response\n
-    Architect&#39;s Note: I have deliberately avoided adding up the totals, adding
-    delivery, ect. Psychologically, the client would see the &#39;high&#39; bill and
-    stop shopping. Hence, the surprises and the tax breakdown will be only
-    revealed at the final invoice.
+    Architect&#39;s Note: I have omitted the sub-total and the delivery fee. The
+    decision is left to &#34;business rules&#34; if this data should be included at this
+    stage. Also, the frontend would be able to do this calculation.
 
     dOutput (dictionary)
 
